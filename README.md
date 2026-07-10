@@ -55,6 +55,16 @@ You can also enter `:Fittenlogout` to log out.
 
 您还可以输入`:Fittenlogout`登出。
 
+You can customize the following global variables in your vimrc:
+
+- `g:fitten_updatetime`: set `updatetime` for auto completion trigger (default: `400`).
+- `g:fitten_auto_completion`: enable/disable auto completion (default: `1`).
+
+您可以在 vimrc 中自定义以下全局变量：
+
+- `g:fitten_updatetime`: 设置自动补全触发的 `updatetime`（默认值：`400`）。
+- `g:fitten_auto_completion`: 开启/关闭自动补全（默认值：`1`）。
+
 For more advanced usage, esp. using your own trigger functions, see `:help fitten-advanced`.
 
 有关更高级的用法，特别是使用您自己的触发器函数，请参阅`:help fitten advanced`。

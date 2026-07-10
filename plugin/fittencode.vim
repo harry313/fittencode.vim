@@ -22,7 +22,9 @@ function! SetSuggestionStyle() abort
     endif
 endfunction
 
-let g:fitten_auto_completion = 0
+if !exists('g:fitten_auto_completion')
+    let g:fitten_auto_completion = 1
+endif
 
 function! Fittenlogin(account, password)
     let l:login_url = 'https://fc.fittenlab.cn/codeuser/login'
