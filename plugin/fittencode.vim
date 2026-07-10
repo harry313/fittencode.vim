@@ -329,6 +329,10 @@ endif
 if !exists('g:fitten_login_status')
     let g:fitten_login_status = CheckLoginStatus()
 endif
+if !exists('g:fitten_updatetime')
+    let g:fitten_updatetime = 400
+endif
+execute 'set updatetime=' . g:fitten_updatetime
 function! FittenMapping()
     execute "inoremap" keytrans(g:fitten_trigger) '<Cmd>call CodeCompletion()<CR>'
     if g:fitten_accept_key isnot v:none
@@ -348,7 +352,6 @@ augroup fittencode
     autocmd ColorScheme,VimEnter * call SetSuggestionStyle()
     " Map tab using vim enter so it occurs after all other sourcing.
     autocmd VimEnter             * call FittenMapping()
-    set updatetime=1500
     autocmd CursorHoldI  * if g:fitten_auto_completion == 1 | call CodeAutoCompletion() | endif
     autocmd TextChangedI * call s:UpdateVirtualTextOnInput()
 augroup END
